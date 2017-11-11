@@ -1,0 +1,18 @@
+{
+  "name": "paulmillband/m2-admin-reindex",
+  "description": "Magento 2 module for reindexing in the admin",
+  "type": "magento2-module",
+  "authors": [
+    {
+      "name": "Paul Millband",
+      "email": "millband_paul@hotmail.co.uk"
+    }
+  ],
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Paulmillband\\Reindex\\": ""
+    }
+  }
+}
+
