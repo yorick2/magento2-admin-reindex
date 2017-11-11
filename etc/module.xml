@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <!--
 /**
- * paulmillband_adminReindex Module
+ * Paulmillband_Reindex Module
  *
- * @category    paulmillband
- * @package     paulmillband_adminReindex
- * @author      paulmillband Software Private Limited
+ * @category    Paulmillband
+ * @package     Paulmillband_Reindex
+ * @author      Paulmillband
  *
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../magento/framework/Module/etc/module.xsd">
-    <module name="paulmillband_adminReindex" setup_version="1.0.0.0">
+    <module name="Paulmillband_Reindex" setup_version="1.0.0.0">
+        <sequence>
+            <module name="Magento_Indexer"/>
+        </sequence>
     </module>
 </config>

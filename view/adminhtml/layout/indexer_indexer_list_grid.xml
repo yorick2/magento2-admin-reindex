@@ -10,7 +10,7 @@
         <referenceBlock name="adminhtml.indexer.grid.grid.massaction">
             <arguments>
                 <argument name="options" xsi:type="array">
-                    <item name="admin_reindex" xsi:type="array">
+                    <item name="adminreindex" xsi:type="array">
                         <item name="label" xsi:type="string" translate="true">Reindex</item>
                         <item name="url" xsi:type="string">*/indexer/reindex</item>
                     </item>

@@ -1,13 +1,13 @@
 <?php
 /**
- * paulmillband_adminReindex Module Registration.
+ * Paulmillband_Reindex Module Registration.
  *
- * @category    paulmillband
+ * @category    Paulmillband
  *
- * @author      paulmillband
+ * @author      Paulmillband
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'paulmillband_adminReindex',
+    'Paulmillband_Reindex',
     __DIR__
 );
