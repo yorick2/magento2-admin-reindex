@@ -16,5 +16,5 @@ php bin/magento module:enable Paulmillband_Reindex
 
 php bin/magento setup:upgrade
 
-php bin/magento setup:di:compile;
+php bin/magento setup:di:compile
 
