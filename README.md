@@ -7,5 +7,8 @@ system > tools > index management
 
 ## Installation
 php bin/magento module:enable Paulmillband_Reindex
+
 php bin/magento setup:upgrade
+
 php bin/magento setup:di:compile;
+
