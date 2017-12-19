@@ -2,7 +2,7 @@
   "name": "paulmillband/m2-admin-reindex",
   "description": "Magento 2 module for reindexing in the admin",
   "type": "magento2-module",
-  "license": "proprietary",
+  "license": "mit",
   "authors": [
     {
       "name": "Paul Millband",
