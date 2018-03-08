@@ -1,3 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../magento/framework/ObjectManager/etc/config.xsd">
+    <type name="Symfony\Component\Console\Command\Command">
+        <plugin name="PaulMillbandIndexerReindexCommandObserver"
+                type="Paulmillband\Reindex\Plugin\IndexerReindexCommandPlugin" sortOrder="10" />
+    </type>
 </config>
