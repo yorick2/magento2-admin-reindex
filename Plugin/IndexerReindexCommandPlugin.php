@@ -5,7 +5,8 @@ use Magento\Framework\Indexer\StateInterface;
 use Magento\Indexer\Model\Indexer\CollectionFactory;
 use Magento\Indexer\Model\IndexerFactory;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
 class IndexerReindexCommandPlugin
@@ -39,11 +40,11 @@ class IndexerReindexCommandPlugin
      *
      * @param Command $subject
      * @param callable $proceed
-     * @param ArgvInput $input
-     * @param ConsoleOutput $output
+     * @param InputInterface $input
+     * @param OutputInterface $output
      * @return mixed
      */
-    public function aroundRun(Command $subject, callable $proceed, $input, $output)
+    public function aroundRun(Command $subject, callable $proceed, InputInterface $input, OutputInterface $output)
     {
         $returnValue = $proceed($input, $output); // run original code
         $workingIndexers = [];
@@ -51,7 +52,7 @@ class IndexerReindexCommandPlugin
         if ($input->getArgument('command') !== "indexer:reindex") {
             return $returnValue;
         }
-        
+
         $indexers = $this->indexerCollectionFactory->create();
         foreach ($indexers as $indexer) {
             if ($indexer->getStatus() == StateInterface::STATUS_WORKING) {
