@@ -43,15 +43,16 @@ class IndexerReindexCommandPlugin
      * @param ConsoleOutput $output
      * @return mixed
      */
-    public function aroundRun(Command $subject, callable $proceed, ArgvInput $input, ConsoleOutput $output)
+    public function aroundRun(Command $subject, callable $proceed, $input, $output)
     {
         $returnValue = $proceed($input, $output); // run original code
         $workingIndexers = [];
 
-        $indexers = $this->indexerCollectionFactory->create();
         if ($input->getArgument('command') !== "indexer:reindex") {
             return $returnValue;
         }
+        
+        $indexers = $this->indexerCollectionFactory->create();
         foreach ($indexers as $indexer) {
             if ($indexer->getStatus() == StateInterface::STATUS_WORKING) {
                 $workingIndexers[] = $indexer->getTitle();
